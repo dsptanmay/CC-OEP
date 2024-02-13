@@ -5,6 +5,10 @@ mongoose.Promise = global.Promise;
 console.log("Successful DB Connection");
 
 const recipeSchema = new Schema({
+    userid: {
+        type: String,
+        requiered: true
+    },
     title: {
         type: String,
         requiered: true,
