@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { NextRequest, NextResponse } from "next/server";
 import Recipe from "@/app/models/recipe";
 
+// POST a recipe from a user
 export async function POST(request, { params }) {
   try {
     const { uid: userid } = params;
@@ -22,6 +23,7 @@ export async function POST(request, { params }) {
   }
 }
 
+// GET all recipes for a user 
 export async function GET(request, { params }) {
   try {
     const { uid: userid } = params;
@@ -32,3 +34,4 @@ export async function GET(request, { params }) {
     return NextResponse.json({ message: error }, { status: 500 });
   }
 }
+
