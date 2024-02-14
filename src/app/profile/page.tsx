@@ -26,7 +26,7 @@ const Profile = () => {
   const { user }: any = AuthContext();
   const router = useRouter();
 
-  const userInfo:User = user.user;
+  const userInfo: User = user.user;
   useEffect(() => {
     if (!userInfo) {
       router.push(HOME_ROUTE);
