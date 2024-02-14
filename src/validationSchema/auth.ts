@@ -7,7 +7,7 @@ const loginSchema = Yup.object({
     password: Yup.string().required("Please fill this field").min(6,"Please enter minimum 6 characters for password.")
 })
 
-export const loginValidation = () => useForm({
+export const LoginValidation = () => useForm({
     resolver:yupResolver(loginSchema)
 });
 
@@ -18,6 +18,6 @@ const registerSchema = Yup.object({
     cnfPassword: Yup.string().required("Please fill this field").oneOf([Yup.ref('password')],"Enter password not matched.")
 });
 
-export const registerValidation = () => useForm({
+export const RegisterValidation = () => useForm({
     resolver:yupResolver(registerSchema)
 });

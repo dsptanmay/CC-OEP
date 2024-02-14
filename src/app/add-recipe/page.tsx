@@ -76,7 +76,8 @@ const AddRecipe = () => {
           <input
             value={servings}
             onChange={(e) => {
-              setServings(e.target.value);
+              const n = parseInt(e.target.value);
+              setServings(n);
             }}
             className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
           />
@@ -87,7 +88,8 @@ const AddRecipe = () => {
           <input
             value={rating}
             onChange={(e) => {
-              setRating(e.target.value);
+              const n = parseInt(e.target.value);
+              setRating(n);
             }}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />

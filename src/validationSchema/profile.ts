@@ -7,7 +7,7 @@ const profileSchema = Yup.object({
   photo: Yup.string().nullable(),
 });
 
-export const profileValidation = () =>
+export const ProfileValidation = () =>
   useForm({
     resolver: yupResolver(profileSchema),
   });
@@ -16,7 +16,7 @@ const profilePasswordSchema = Yup.object({
   password: Yup.string().nullable(),
 });
 
-export const profilePasswordValidation = () =>
+export const ProfilePasswordValidation = () =>
   useForm({
     resolver: yupResolver(profilePasswordSchema),
   });

@@ -3,8 +3,8 @@ import { HOME_ROUTE } from "@/constants/routes";
 import useAuthentication from "@/hooks/useAuthentication";
 import { AuthContext } from "@/provider/AuthProvider";
 import {
-  profilePasswordValidation,
-  profileValidation,
+  ProfilePasswordValidation,
+  ProfileValidation,
 } from "@/validationSchema/profile";
 import { User } from "firebase/auth";
 import { useRouter } from "next/navigation";
@@ -16,13 +16,13 @@ const Profile = () => {
     handleSubmit,
     register,
     formState: { errors },
-  } = profileValidation();
+  } = ProfileValidation();
 
   const {
     handleSubmit: passwordHandleSubmit,
     register: registerPassword,
     formState: { errors: passwordErrors },
-  } = profilePasswordValidation();
+  } = ProfilePasswordValidation();
   const { user }: any = AuthContext();
   const router = useRouter();
 

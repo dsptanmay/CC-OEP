@@ -3,7 +3,7 @@ import InputField from "@/components/InputField";
 import { PROFILE_ROUTE, REGISTER_ROUTE } from "@/constants/routes";
 import Link from "next/link";
 import { auth } from "@/services/firebase";
-import { loginValidation } from "@/validationSchema/auth";
+import { LoginValidation } from "@/validationSchema/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import useAuthentication from "@/hooks/useAuthentication";
@@ -14,7 +14,7 @@ const Login = () => {
     handleSubmit,
     register,
     formState: { errors },
-  } = loginValidation();
+  } = LoginValidation();
   const router = useRouter();
   useAuthentication();
   const fields: InputFieldT[] = [
@@ -62,7 +62,7 @@ const Login = () => {
           </div>
         </form>
         <div className="text-center">
-          <span className="text-sm">Don't have an account?</span> <br />
+          <span className="text-sm">Don`&apos;`t have an account?</span> <br />
           <Link href={REGISTER_ROUTE} className="text-blue-500 hover:underline">
             Create one here
           </Link>

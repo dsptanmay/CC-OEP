@@ -3,7 +3,7 @@ import InputField from "@/components/InputField";
 import { LOGIN_ROUTE, PROFILE_ROUTE } from "@/constants/routes";
 import useAuthentication from "@/hooks/useAuthentication";
 import { auth } from "@/services/firebase";
-import { registerValidation } from "@/validationSchema/auth";
+import { RegisterValidation } from "@/validationSchema/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -17,7 +17,7 @@ const Register = () => {
     register,
     formState: { errors },
     reset,
-  } = registerValidation();
+  } = RegisterValidation();
 
   const fields: InputFieldT[] = [
     {
