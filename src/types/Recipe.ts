@@ -2,10 +2,10 @@ export type RecipeType = {
   createdAt: String;
   description: String;
   rating: Number;
-  servingSize: Number;
+  servings: Number;
   steps: String;
   title: String;
-  userId: String;
+  userid: String;
   __v: any;
   _id: String;
 };
