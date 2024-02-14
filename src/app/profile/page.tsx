@@ -1,4 +1,5 @@
 "use client";
+import { HOME_ROUTE } from "@/constants/routes";
 import useAuthentication from "@/hooks/useAuthentication";
 import { AuthContext } from "@/provider/AuthProvider";
 import {
@@ -6,7 +7,8 @@ import {
   profileValidation,
 } from "@/validationSchema/profile";
 import { updatePassword, updateProfile } from "firebase/auth";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Profile = () => {
   useAuthentication();
@@ -22,9 +24,14 @@ const Profile = () => {
     formState: { errors: passwordErrors },
   } = profilePasswordValidation();
   const { user }: any = AuthContext();
+  const router = useRouter();
 
   const userInfo = user.user;
-
+  useEffect(() => {
+    if (!userInfo) {
+      router.push(HOME_ROUTE);
+    }
+  }, [userInfo, router]);
   return (
     <div className="h-screen max:h-screen-auto flex justify-center items-center bg-gradient-to-br from-yellow-400/20 via-blue-300 to-purple-400/60">
       <div className="bg-gray-100 p-8 rounded-lg shadow-lg w-96">

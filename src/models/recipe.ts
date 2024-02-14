@@ -1,18 +1,17 @@
 import mongoose, { Schema } from "mongoose";
 
-mongoose.connect(process.env.MONGO_URI as string);
+mongoose.connect(process.env.NEXT_PUBLIC_MONGO_URI as string);
 mongoose.Promise = global.Promise;
-// console.log("Successful DB Connection");
 
 const recipeSchema = new Schema(
   {
     userid: {
       type: String,
-      requiered: true,
+      required: true,
     },
     title: {
       type: String,
-      requiered: true,
+      required: true,
       maxlength: 20,
       minlength: 3,
       trim: true,
@@ -20,25 +19,25 @@ const recipeSchema = new Schema(
     },
     description: {
       type: String,
-      requiered: true,
+      required: true,
       maxlength: 100,
       minlength: 10,
     },
     servings: {
       type: Number,
-      requiered: true,
+      required: true,
       min: 1,
       max: 10,
     },
     rating: {
       type: Number,
-      requiered: true,
+      required: true,
       min: 1,
       max: 5,
     },
     steps: {
       type: String,
-      requiered: true,
+      required: true,
       minlength: 10,
       maxlength: 500,
     },
