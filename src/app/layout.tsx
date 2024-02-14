@@ -7,7 +7,7 @@ import { Josefin_Sans as FontSans } from "next/font/google";
 const font = FontSans({ subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "Cookbook Manager",
+  title: "Chef's Palette",
   description: "Made by Team 14",
 };
 
