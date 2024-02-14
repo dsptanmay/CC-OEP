@@ -1,6 +1,6 @@
 import { LOGIN_ROUTE, PROFILE_ROUTE, REGISTER_ROUTE } from "@/constants/routes";
 import { AuthContext } from "@/provider/AuthProvider";
-import { UserType } from "@/validationSchema/user";
+import { UserType } from "@/types/user";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 const GUEST_ROUTES = [LOGIN_ROUTE, REGISTER_ROUTE];

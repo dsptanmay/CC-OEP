@@ -6,9 +6,9 @@ import {
   profilePasswordValidation,
   profileValidation,
 } from "@/validationSchema/profile";
-import { updatePassword, updateProfile } from "firebase/auth";
+import { User } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Profile = () => {
   useAuthentication();
@@ -26,7 +26,7 @@ const Profile = () => {
   const { user }: any = AuthContext();
   const router = useRouter();
 
-  const userInfo = user.user;
+  const userInfo:User = user.user;
   useEffect(() => {
     if (!userInfo) {
       router.push(HOME_ROUTE);
