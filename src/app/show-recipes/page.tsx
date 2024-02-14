@@ -3,7 +3,6 @@ import RecipeCard from "@/components/RecipeCard";
 import { AuthContext } from "@/provider/AuthProvider";
 import { getAllUID } from "@/services/fetchServ";
 import { RecipeObject } from "@/types/Recipe";
-import { User } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { Key, useEffect, useState } from "react";
 
@@ -11,7 +10,7 @@ const ShowRecipes = () => {
   const [recipes, setRecipes] = useState<RecipeObject>();
   const router = useRouter();
   const { user }: any = AuthContext();
-  const userInfo: User = user.user;
+  const userInfo = user.user;
   useEffect(() => {
     const fetchData = async () => {
       const res = await getAllUID("234");
@@ -19,6 +18,9 @@ const ShowRecipes = () => {
     };
     fetchData();
   }, []);
+  // recipes?.message.forEach((res) => {
+  //   console.log(res.userid, res.title);
+  // });
   return (
     <div className="container mx-auto m-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">

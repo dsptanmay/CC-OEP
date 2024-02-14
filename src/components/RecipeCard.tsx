@@ -27,8 +27,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
         {recipe.description.slice(0, 20)}...
       </p>
       <div className="flex items-center mb-2">
-        <span className="text-gray-600">Rating: </span>
         <span className="text-yellow-500 mr-1">{recipe.rating.toString()}</span>
+        <span className="text-gray-600">Rating</span>
       </div>
       <div className="text-gray-600">
         Serving Size: {recipe.servings.toString()}
