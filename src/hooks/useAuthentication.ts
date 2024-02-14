@@ -8,7 +8,6 @@ const GUEST_ROUTES = [LOGIN_ROUTE, REGISTER_ROUTE];
 const useAuthentication = () => {
   const { user }: any = AuthContext();
   const userInfo: UserType = user;
-  //   console.log(userInfo);
   const router = useRouter();
   const currentRoute = window.location.pathname;
 
@@ -20,7 +19,7 @@ const useAuthentication = () => {
     if (userInfo.user && GUEST_ROUTES.includes(currentRoute)) {
       router.push(PROFILE_ROUTE);
     }
-  }, []);
+  }, [userInfo, GUEST_ROUTES, router]);
 };
 
 export default useAuthentication;
